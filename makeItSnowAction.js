@@ -104,9 +104,11 @@ export function makeItSnow(node) {
 
     crateSnowflakes();
 
-	return {
-		destroy() {
-            ro.disconnect();
-		}
-	};
+    return {
+	destroy() {
+	    snowflakes = [];
+	    canvas.remove();
+	    ro.disconnect();
+	}
+    };
 };
